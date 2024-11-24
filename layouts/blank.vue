@@ -1,5 +1,5 @@
 <template>
-  <LayoutBase>
+  <div>
     <slot />
-  </LayoutBase>
+  </div>
 </template>

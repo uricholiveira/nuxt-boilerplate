@@ -1,10 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { defineNuxtConfig } from "nuxt/config";
-import en from "./locales/en-US.json";
-import fr from "./locales/fr-FR.json";
-import ar from "./locales/ar-AR.json";
+// import en from "./locales/en-US.json";
+// import fr from "./locales/fr-FR.json";
+// import ar from "./locales/ar-AR.json";
 
 export default defineNuxtConfig({
+  ssr: false,
   devtools: { enabled: true },
 
   nitro: {
@@ -63,7 +64,7 @@ export default defineNuxtConfig({
 
   googleFonts: {
     families: {
-      Inter: true,
+      Inter: [100, 200, 300, 400, 500, 600, 700, 800, 900],
     },
     display: "swap",
     prefetch: true,
@@ -84,39 +85,35 @@ export default defineNuxtConfig({
     lintOnStart: false,
   },
 
-  cookieControl: {
-    cookieExpiryOffsetMs: 1000 * 60 * 60 * 24 * 365, // one year
-    // set all these to true for highest GDPR enforcement
-    isAcceptNecessaryButtonEnabled: true,
-    isModalForced: false,
-    isCookieIdVisible: true,
-    closeModalOnClickOutside: true,
-    // show cookie button
-    isControlButtonEnabled: true,
-    // disable to get unstyled css for tailwind
-    isCssEnabled: false,
-    isDashInDescriptionEnabled: false,
-    cookies: {
-      necessary: [
-        {
-          name: {
-            fr: fr.cookies.necessary.title,
-            en: en.cookies.necessary.title,
-            ar: ar.cookies.necessary.title,
-          },
-          description: {
-            fr: fr.cookies.necessary.description,
-            en: en.cookies.necessary.description,
-            ar: ar.cookies.necessary.description,
-          },
-          targetCookieIds: ["ncc_"],
-          id: "",
-        },
-      ],
-      optional: [],
-    },
-    locales: ["en", "fr", "ar"],
-  },
+  // cookieControl: {
+  //   cookieExpiryOffsetMs: 1000 * 60 * 60 * 24 * 365, // one year
+  //   // set all these to true for highest GDPR enforcement
+  //   isAcceptNecessaryButtonEnabled: true,
+  //   isModalForced: false,
+  //   isCookieIdVisible: true,
+  //   closeModalOnClickOutside: true,
+  //   // show cookie button
+  //   isControlButtonEnabled: true,
+  //   // disable to get unstyled css for tailwind
+  //   isCssEnabled: false,
+  //   isDashInDescriptionEnabled: false,
+  //   cookies: {
+  //     necessary: [
+  //       {
+  //         name: {
+  //           en: en.cookies.necessary.title,
+  //         },
+  //         description: {
+  //           en: en.cookies.necessary.description,
+  //         },
+  //         targetCookieIds: ["ncc_"],
+  //         id: "",
+  //       },
+  //     ],
+  //     optional: [],
+  //   },
+  //   locales: ["en"],
+  // },
 
   compatibilityDate: "2024-09-15",
 });

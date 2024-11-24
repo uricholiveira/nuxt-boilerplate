@@ -12,11 +12,6 @@ export default {
       body: ["Inter"],
     },
     extend: {
-      colors: {
-        "nuxt-green": "#00DC82",
-        "nuxt-white": "#ffffff",
-        "nuxt-grey": "#18181B",
-      },
       spacing: {
         "8xl": "96rem",
         "9xl": "128rem",
@@ -38,7 +33,9 @@ export default {
     `./app.{js,ts,vue}`,
     `./error.{js,ts,vue}`,
     `./app.config.{js,ts}`,
+    "./node_modules/preline/preline.js",
   ],
+  plugins: [require("@tailwindcss/forms"), require("preline/plugin")],
   // safelist: [
   //   'safelisted',
   //   {

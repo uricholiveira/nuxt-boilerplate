@@ -14,9 +14,9 @@ useHead({
 </script>
 <template>
   <NuxtLayout>
-    <div>
-      <CookieBanner />
-      <NuxtPage />
-    </div>
+    <!-- <div> -->
+    <!-- <CookieBanner /> -->
+    <NuxtPage />
+    <!-- </div> -->
   </NuxtLayout>
 </template>
